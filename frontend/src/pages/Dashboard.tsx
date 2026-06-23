@@ -104,10 +104,10 @@ export default function Dashboard() {
   return (
     <div className="min-h-screen bg-background">
       <Header email={user?.email ?? ""} onSignOut={handleSignOut} />
-      <main className="mx-auto max-w-7xl px-3 sm:px-6 py-10">
+      <main className="w-full max-w-7xl mx-auto px-2 sm:px-6 py-6 sm:py-10">
         <div className="flex items-end justify-between mb-8 flex-wrap gap-3">
           <div>
-            <h1 className="font-display text-4xl md:text-5xl leading-tight">
+            <h1 className="font-display text-2xl sm:text-4xl md:text-5xl leading-tight">
               New <span className="text-gradient italic">analysis</span>
             </h1>
             <p className="mt-1 text-muted-foreground">Upload a resume and paste a job description to get an instant ATS score.</p>
@@ -169,7 +169,7 @@ export default function Dashboard() {
             <button
               onClick={handleAnalyze}
               disabled={analyzing || parsing || !file || !resumeText || !jobDescription}
-              className="w-full inline-flex items-center justify-center gap-2 py-4 rounded-xl bg-gradient-primary text-primary-foreground font-semibold shadow-glow hover:scale-[1.005] transition disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+              className="w-full inline-flex items-center justify-center gap-2 py-3 sm:py-4 rounded-xl bg-gradient-primary text-primary-foreground font-semibold shadow-glow transition"
             >
               {analyzing ? (
                 <><Loader2 className="h-4 w-4 animate-spin" /> Analyzing with AI…</>
@@ -236,7 +236,7 @@ export default function Dashboard() {
 function Header({ email, onSignOut }: { email: string; onSignOut: () => void }) {
   return (
     <header className="sticky top-0 z-40 backdrop-blur-xl bg-background/80 border-b border-border">
-      <div className="mx-auto max-w-7xl px-3 sm:px-6 h-16 flex items-center justify-between">
+      <div className="mx-auto max-w-7xl px-2 sm:px-6 h-16 flex items-center justify-between gap-2">
         <Link to="/" className="flex items-center gap-2.5">
           <span className="relative inline-grid h-8 w-8 place-items-center rounded-xl bg-gradient-primary shadow-glow">
             <Radar className="h-4 w-4 text-primary-foreground" strokeWidth={2.4} />
@@ -246,9 +246,10 @@ function Header({ email, onSignOut }: { email: string; onSignOut: () => void }) 
         <div className="flex items-center gap-3">
           <Link
             to="/jobs"
-            className="hidden sm:inline-flex items-center gap-1.5 text-sm font-medium px-3 py-2 rounded-lg border border-border hover:bg-accent transition"
+            className="inline-flex items-center gap-1 text-xs sm:text-sm font-medium px-2 sm:px-3 py-2 rounded-lg border border-border hover:bg-accent transition"
           >
-            <Briefcase className="h-4 w-4" /> Jobs
+            <Briefcase className="h-4 w-4" />
+            <span className="hidden sm:inline">Jobs</span>
           </Link>
           <Link
             to="/dashboard"
