@@ -46,9 +46,9 @@
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.18 0.04 25);
 
-  --primary: oklch(0.58 0.22 27);
+  --primary: oklch(78.202% 0.09478 88.384);
   --primary-foreground: oklch(0.99 0.005 20);
-  --primary-glow: oklch(0.72 0.2 22);
+  --primary-glow: oklch(79.646% 0.11569 89.501);
 
   --secondary: oklch(0.97 0.015 25);
   --secondary-foreground: oklch(0.25 0.08 27);
@@ -68,7 +68,7 @@
 
   --gradient-hero: radial-gradient(ellipse 80% 60% at 50% 0%, oklch(0.92 0.12 25 / 0.6), transparent 70%),
                    linear-gradient(180deg, oklch(0.995 0.003 20), oklch(0.98 0.02 25));
-  --gradient-primary: linear-gradient(135deg, oklch(0.58 0.22 27), oklch(0.68 0.22 18));
+  --gradient-primary: linear-gradient(135deg, oklch(76.492% 0.1391 82.382), oklch(0.68 0.22 18));
   --gradient-text: linear-gradient(135deg, oklch(0.45 0.24 27), oklch(0.62 0.24 18));
   --gradient-card: linear-gradient(180deg, oklch(1 0 0), oklch(0.98 0.015 25));
   --gradient-mesh: radial-gradient(at 20% 10%, oklch(0.85 0.15 25 / 0.4), transparent 50%),
