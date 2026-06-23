@@ -104,7 +104,7 @@ export default function Dashboard() {
   return (
     <div className="min-h-screen bg-background">
       <Header email={user?.email ?? ""} onSignOut={handleSignOut} />
-      <main className="w-full max-w-7xl mx-auto px-2 sm:px-6 py-6 sm:py-10">
+      <main className="w-full max-w-7xl mx-auto px-2 sm:px-6 py-6 sm:py-10 overflow-x-hidden">
         <div className="flex items-end justify-between mb-8 flex-wrap gap-3">
           <div>
             <h1 className="font-display text-2xl sm:text-4xl md:text-5xl leading-tight">
@@ -114,7 +114,7 @@ export default function Dashboard() {
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
           <div className="lg:col-span-2 space-y-5">
             <Card>
               <Label step={1} title="Upload your resume" subtitle="PDF only · max 10MB" />
@@ -197,8 +197,11 @@ export default function Dashboard() {
                   {history.map((a) => (
                     <li key={a._id} className="group flex items-center gap-3 p-3 rounded-lg border border-border hover:bg-accent/40 transition">
                       <ScoreBadge score={a.overallScore} />
-                      <Link to={`/analysis/${a._id}`} className="flex-1 min-w-0">
-                        <div className="truncate text-sm font-medium">{a.jobTitle || a.resumeFilename}</div>
+                      <Link
+                          to={`/analysis/${a._id}`}
+                          className="flex-1 min-w-0 overflow-hidden"
+                        >
+                        <div className="truncate break-all text-sm font-medium">{a.jobTitle || a.resumeFilename}</div>
                         <div className="truncate text-xs text-muted-foreground">
                           {new Date(a.createdAt).toLocaleDateString(undefined, { month: "short", day: "numeric" })} · {a.resumeFilename}
                         </div>
@@ -272,7 +275,11 @@ function Header({ email, onSignOut }: { email: string; onSignOut: () => void }) 
 }
 
 function Card({ children }: { children: React.ReactNode }) {
-  return <div className="rounded-2xl border border-border bg-gradient-card shadow-soft p-6">{children}</div>;
+  return (
+    <div className="w-full min-w-0 rounded-2xl border border-border bg-gradient-card shadow-soft p-4 sm:p-6">
+      {children}
+    </div>
+  );
 }
 
 function Label({ step, title, subtitle }: { step: number; title: string; subtitle?: string }) {
