@@ -63,7 +63,7 @@ export default function AnalysisPage() {
   return (
     <div className="min-h-screen bg-background">
       <header className="sticky top-0 z-40 backdrop-blur-xl bg-background/80 border-b border-border">
-        <div className="mx-auto max-w-7xl px-6 h-16 flex items-center justify-between">
+        <div className="mx-auto max-w-7xl px-3 sm:px-6 h-16 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2">
             <div className="h-8 w-8 rounded-lg bg-gradient-primary grid place-items-center shadow-soft">
               <Radar className="h-4 w-4 text-primary-foreground" strokeWidth={2.4} />
@@ -73,9 +73,9 @@ export default function AnalysisPage() {
           <div className="flex items-center gap-3">
             <Link
               to="/dashboard"
-              className="inline-flex items-center gap-1.5 text-sm font-semibold px-3 py-2 rounded-lg bg-gradient-primary text-primary-foreground hover:shadow-glow transition"
+              className="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1.5 rounded-lg bg-gradient-primary text-primary-foreground hover:shadow-glow transition"
             >
-              <Plus className="h-4 w-4" /> New analysis
+              <Plus className="h-3.5 w-3.5" /> New
             </Link>
             <div className="hidden sm:block text-sm text-muted-foreground max-w-[180px] truncate">{user?.email}</div>
             <button
@@ -88,7 +88,7 @@ export default function AnalysisPage() {
         </div>
       </header>
 
-      <main className="mx-auto max-w-7xl px-6 py-10">
+      <main className="mx-auto max-w-7xl px-3 sm:px-6 py-10">
         <div className="flex items-center justify-between flex-wrap gap-3 mb-8">
           <div>
             <Link to="/dashboard" className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground">
